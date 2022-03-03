@@ -1,1 +1,12 @@
-# questinator
+# Questinator
+This is Questinator, made by **Doofenshmirtz Evil Inc**.
+
+It's a thing...
+that does stuff....
+and the things that it does are very cool.........
+but, well, the thing is.....
+it doesn't do anything yet.
+because we haven't made anything.
+yet.
+so,uh yeah.
+that will be coming in the future.

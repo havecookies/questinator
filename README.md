@@ -8,5 +8,5 @@ But, well, the thing is.....
 It doesn't do anything yet.
 Because we haven't made anything.
 Yet.
-So,uh yeah.
+So, uh yeah.
 That will be coming in the future.

@@ -6,7 +6,8 @@ class Overworld {
 	}
 
 	init() {
-
+		// This will all be refactored, don't worry
+		
 		// Background image
 		const image = new Image();
 		// Draw image
@@ -18,7 +19,6 @@ class Overworld {
 
 		const x = 5;
 		const y = 6;
-
 		const shadow = new Image();
 		shadow.onload = () => {
 			this.ctx.drawImage(

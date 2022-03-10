@@ -12,6 +12,7 @@ class GameObject {
 		});
 	}
 
+	// Update method
 	update() {
 
 	}

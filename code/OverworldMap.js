@@ -34,24 +34,24 @@ window.OverworldMaps = {
 			})
 	    }
   },
-  	Kitchen: {
-	    lowerSrc: "/images/temp/maps/KitchenLower.png",
-	    upperSrc: "/images/temp/maps/KitchenUpper.png",
-	    gameObjects: {
-	    	hero: new Person({
-	        	x: utils.withGrid(3),
-	        	y: utils.withGrid(5),
-	    	}),
-	    	npcA: new GameObject({
-	        	x: utils.withGrid(9),
-	        	y: utils.withGrid(6),
-	        	src: "/images/temp/characters/people/npc2.png"
-	    	}),
-	    	npcB: new GameObject({
-	    		x: utils.withGrid(10),
-	    		y: utils.withGrid(8),
-	    		src: "/images/temp/characters/people/npc3.png"
-	    	})
-	    }
-  },
+  Kitchen: {
+    lowerSrc: "/images/temp/maps/KitchenLower.png",
+    upperSrc: "/images/temp/maps/KitchenUpper.png",
+    gameObjects: {
+    	hero: new Person({
+        	x: utils.withGrid(3),
+        	y: utils.withGrid(5),
+    	}),
+    	npcA: new GameObject({
+        	x: utils.withGrid(9),
+        	y: utils.withGrid(6),
+        	src: "/images/temp/characters/people/npc2.png"
+    	}),
+    	npcB: new GameObject({
+    		x: utils.withGrid(10),
+    		y: utils.withGrid(8),
+    		src: "/images/temp/characters/people/npc3.png"
+    	})
+    }
+  }
 }

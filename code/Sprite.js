@@ -28,19 +28,14 @@ class Sprite {
 		this.currentAnimation = config.currentAnimation || "idleDown";
 		this.currentAnimationFrame = 0;
 
-		// Easily set the grid size & sprite offset
-		this.gridSize = config.gridSize || 16;
-		this.xOffset = config.xOffset || 8;
-		this.yOffset = config.yOffset || 18;
-
 		// Reference the game object
 		this.gameObject = config.gameObject;
 		
 	}
 
 	draw(ctx) {
-		const x = this.gameObject.x * this.gridSize - 8;
-		const y = this.gameObject.y * this.gridSize - 18;
+		const x = this.gameObject.x - 8;
+		const y = this.gameObject.y- 18;
 
 		this.isShadowLoaded && ctx.drawImage(this.shadow, x, y)
 		

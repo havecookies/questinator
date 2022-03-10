@@ -18,7 +18,9 @@ class Overworld {
 
 			// Draw Game Objects
 			Object.values(this.map.gameObjects).forEach(object => {
-				object.x += 0.02;
+				object.update({
+					
+				});
 				object.sprite.draw(this.ctx);
 			})
 			
@@ -32,7 +34,7 @@ class Overworld {
 	}
 	
 	init() {
-		this.map = new OverworldMap(window.OverworldMaps.Kitchen);
+		this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
 		this.startGameLoop();
 	}
 }

@@ -8,7 +8,7 @@ class GameObject {
 
 		this.sprite = new Sprite({
 			gameObject: this,
-			src: config.src || globalHeroSprite,
+			src: config.src || globalPlayerSprite,
 		});
 	}
 

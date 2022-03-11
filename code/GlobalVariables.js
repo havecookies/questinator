@@ -4,3 +4,6 @@
 // anything that could get confused with a local object
 
 window.globalGridSize = 16;
+
+// This is so we can change the main hero's sprite easily
+window.globalHeroSprite = "images/temp/characters/people/hero.png";

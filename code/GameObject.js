@@ -8,7 +8,7 @@ class GameObject {
 
 		this.sprite = new Sprite({
 			gameObject: this,
-			src: config.src || "/images/temp/characters/people/hero.png",
+			src: config.src || globalHeroSprite,
 		});
 	}
 

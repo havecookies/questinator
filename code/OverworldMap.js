@@ -23,15 +23,15 @@ window.OverworldMaps = {
 	    lowerSrc: "/images/temp/maps/DemoLower.png",
 	    upperSrc: "/images/temp/maps/DemoUpper.png",
 	    gameObjects: {
-			player: new Person({
-				x: utils.withGrid(5),
-				y: utils.withGrid(6),
-			}),
-			npc1: new Person({
-				x: utils.withGrid(7),
-				y: utils.withGrid(9),
-				src: "/images/temp/characters/people/npc1.png"
-			})
+			  player: new Person({
+				  x: utils.withGrid(5),
+				  y: utils.withGrid(6),
+			  }),
+			  npc1: new Person({
+				  x: utils.withGrid(7),
+				  y: utils.withGrid(9),
+				  src: "/images/temp/characters/people/npc1.png"
+			  })
 	    }
   },
   Kitchen: {

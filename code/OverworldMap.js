@@ -20,8 +20,8 @@ class OverworldMap {
 
 window.OverworldMaps = {
 	DemoRoom: {
-	    lowerSrc: "/images/temp/maps/DemoLower.png",
-	    upperSrc: "/images/temp/maps/DemoUpper.png",
+	    lowerSrc: "images/temp/maps/DemoLower.png",
+	    upperSrc: "images/temp/maps/DemoUpper.png",
 	    gameObjects: {
 			  player: new Person({
 				  x: utils.withGrid(5),
@@ -30,13 +30,13 @@ window.OverworldMaps = {
 			  npc1: new Person({
 				  x: utils.withGrid(7),
 				  y: utils.withGrid(9),
-				  src: "/images/temp/characters/people/npc1.png"
+				  src: "images/temp/characters/people/npc1.png"
 			  })
 	    }
   },
   Kitchen: {
-    lowerSrc: "/images/temp/maps/KitchenLower.png",
-    upperSrc: "/images/temp/maps/KitchenUpper.png",
+    lowerSrc: "images/temp/maps/KitchenLower.png",
+    upperSrc: "images/temp/maps/KitchenUpper.png",
     gameObjects: {
     	player: new Person({
         	x: utils.withGrid(3),
@@ -45,12 +45,12 @@ window.OverworldMaps = {
     	npcA: new GameObject({
         	x: utils.withGrid(9),
         	y: utils.withGrid(6),
-        src: "/images/temp/characters/people/npc2.png"
+        	src: "images/temp/characters/people/npc2.png"
     	}),
     	npcB: new GameObject({
     		x: utils.withGrid(10),
     		y: utils.withGrid(8),
-    		src: "/images/temp/characters/people/npc3.png"
+    		src: "images/temp/characters/people/npc3.png"
     	})
     }
   }

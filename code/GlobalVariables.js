@@ -1,5 +1,3 @@
-"use strict";
-
 // Figured it out, using "window." before the variable
 // allows it to become a global variable that you can use
 // anywhere in the code, just make sure to not set it to

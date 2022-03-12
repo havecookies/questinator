@@ -4,7 +4,7 @@ class Person extends GameObject {
 
         this.movingProgressRemaining = 32;
         
-        this.direction = "down";
+        this.direction = "right";
 
         this.directionUpdate = {
             "up" : ["y", -1],

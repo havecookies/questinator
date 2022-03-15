@@ -15,8 +15,8 @@ body {
 
 .game-container {
 	outline: 1px solid #fff;
-	width: 352px;
-	height: 198px;
+	width: 192px;
+	height: 192px;
 	margin: 0;
 	transform: scale(1.42);
 }

@@ -4,5 +4,5 @@
 
 window.globalGridSize = 16;
 
-// This is so we can change the main hero's sprite easily
-window.globalPlayerSprite = "images/temp/characters/people/hero.png";
+// This is so we can change the player's sprite easily
+window.globalPlayerSprite = "images/not-temp/perry_main_character.png";

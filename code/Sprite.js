@@ -30,20 +30,22 @@ class Sprite {
 
 		// Reference the game object
 		this.gameObject = config.gameObject;
-		
+
+		this.xOffset = config.xOffset || 0;
+		this.yOffset = config.yOffset || 0;
 	}
 
 	draw(ctx) {
-		const x = this.gameObject.x - 8;
-		const y = this.gameObject.y- 18;
+		const x = this.gameObject.x - this.xOffset;
+		const y = this.gameObject.y - this.yOffset;
 
 		this.isShadowLoaded && ctx.drawImage(this.shadow, x, y)
 		
 		this.isLoaded && ctx.drawImage(this.image,
-			0, 0,
-			32, 32,
-			x, y,
-			32, 32,		  
+			0, 0, // x and y of image
+			32, 32, // width and height to take from image
+			x, y, // position of image in scene
+			32, 32, // width and height of image in scene
 		);
 	}
 }

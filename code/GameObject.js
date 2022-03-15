@@ -5,10 +5,12 @@ class GameObject {
 		this.y = config.y || 0;
 
 		this.direction = config.direction || "down";
-
+		
 		this.sprite = new Sprite({
 			gameObject: this,
 			src: config.src || globalPlayerSprite,
+			xOffset: config.xOffset || 0,
+			yOffset: config.yOffset || 0,
 		});
 	}
 

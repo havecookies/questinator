@@ -12,10 +12,10 @@ class Overworld {
 
 			// Clear previous frame
 			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
+			
 			// Draw lower map layer
 			this.map.drawLowerImage(this.ctx);
-
+			
 			// Draw Game Objects
 			Object.values(this.map.gameObjects).forEach(object => {
 				object.update({

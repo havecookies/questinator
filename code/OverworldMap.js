@@ -24,11 +24,12 @@ window.OverworldMaps = {
 	    upperSrc: "images/not-temp/maps/DemoUpper.png",
 	    gameObjects: {
 			  player: new Person({
-				  x: Utils.withGrid(5),
+				  isPlayerControlled: true,
+				  x: Utils.withGrid(3),
 				  y: Utils.withGrid(6),
 			  }),
 			  npc1: new Person({
-				  x: Utils.withGrid(7),
+				  x: Utils.withGrid(3),
 				  y: Utils.withGrid(9),
 				  src: "images/temp/characters/people/npc1.png",
 				  xOffset: 8,

@@ -6,3 +6,5 @@ window.globalGridSize = 16;
 
 // This is so we can change the player's sprite easily
 window.globalPlayerSprite = "images/not-temp/perry_main_character.png";
+
+window.globalDebugEnabled = true;

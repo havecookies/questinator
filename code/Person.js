@@ -2,9 +2,9 @@ class Person extends GameObject {
     constructor(config) {
         super(config);
 
-        this.movingProgressRemaining = 32;
+        this.movingProgressRemaining = 0;
         
-        this.direction = "right";
+        this.isPlayerControlled = config.isPlayerControlled || false;
 
         this.directionUpdate = {
             "up" : ["y", -1],
@@ -16,6 +16,13 @@ class Person extends GameObject {
 
     update(state) {
         this.updatePosition();
+
+		// If we have an arrow pressed, let's move our character if they're not already
+		// moving between tiles, this feels nice
+		if(this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
+			this.direction = state.arrow;
+			this.movingProgressRemaining = Utils.withGrid(1);
+		}
     }
 
     updatePosition() {

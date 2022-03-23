@@ -4,7 +4,11 @@
 
 window.globalGridSize = 16;
 
+// Must be divisible by the global grid size
+// oh and JS does not like decimals
+window.movementSpeed = 1;
+
 // This is so we can change the player's sprite easily
-window.globalPlayerSprite = "images/not-temp/perry_main_character.png";
+window.globalPlayerSprite = "images/temp/characters/people/hero.png";
 
 window.globalDebugEnabled = true;

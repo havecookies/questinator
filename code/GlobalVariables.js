@@ -12,3 +12,6 @@ window.movementSpeed = 1;
 window.globalPlayerSprite = "images/temp/characters/people/hero.png";
 
 window.globalDebugEnabled = false;
+
+// The fps to run the game loop at
+window.fps = 60;

@@ -4,6 +4,8 @@ class Overworld {
 		this.canvas = this.element.querySelector(".game-canvas");
 		this.ctx = this.canvas.getContext("2d");
 
+		this.frameRate = (1 / fps) * 1000;
+
 		this.map = null;
 	}
 
@@ -26,9 +28,9 @@ class Overworld {
 			
 			this.map.drawUpperImage(this.ctx);
 			
-			requestAnimationFrame(() => {
+			setTimeout(() => {
 				step();
-			})
+			}, this.frameRate)
 		}
 		step();
 	}

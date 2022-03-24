@@ -18,6 +18,10 @@ class Person extends GameObject {
         this.updatePosition();
 		this.updateSprite(state);
 
+		// Print player location if needed
+		// if(globalDebugEnabled && this.isPlayerControlled) console.log("x: "+ this.x + ", y: " + this.y)
+		
+
 		// If we have an arrow pressed, let's move our character if they're not already
 		// moving between tiles, this feels nice
 		if(this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {

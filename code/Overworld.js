@@ -4,7 +4,7 @@ class Overworld {
 		this.canvas = this.element.querySelector(".game-canvas");
 		this.ctx = this.canvas.getContext("2d");
 
-		this.frameRate = (1 / fps) * 1000;
+		this.frameRate = 1000 / fps;
 
 		this.map = null;
 	}

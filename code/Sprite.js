@@ -30,7 +30,7 @@ class Sprite {
 			"walk-up": 		[ [1, 2], [0, 2], [3, 2], [0, 2] ],
 			"walk-left": 	[ [1, 3], [0, 3], [3, 3], [0, 3] ],
 		};
-		this.currentAnimation = "walk-up"; //config.currentAnimation || "idle-down";
+		this.currentAnimation = config.currentAnimation || "idle-down";
 		this.currentAnimationFrame = 0;
 
 		this.animationFrameLimit = config.animationFrameLimit || Utils.withGrid(1);
@@ -71,9 +71,9 @@ class Sprite {
 		}
 	}
 	
-	draw(ctx) {
-		const x = this.gameObject.x - this.xOffset;
-		const y = this.gameObject.y - this.yOffset;
+	draw(ctx, cameraPerson) {
+		const x = this.gameObject.x - this.xOffset + Utils.withGrid(6) - cameraPerson.x;
+		const y = this.gameObject.y - this.yOffset + Utils.withGrid(6) - cameraPerson.y;
 
 		this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
 		

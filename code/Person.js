@@ -15,20 +15,45 @@ class Person extends GameObject {
     }
 
     update(state) {
-        this.updatePosition();
 		this.updateSprite(state);
-
+		
+		if (this.movingProgressRemaining > 0) {
+        	this.updatePosition();
+			return;
+		}
+		
 		// Print player location if needed
 		// if(globalDebugEnabled && this.isPlayerControlled) console.log("x: "+ this.x + ", y: " + this.y)
 		
 
-		// If we have an arrow pressed, let's move our character if they're not already
-		// moving between tiles, this feels nice
-		if(this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
-			this.direction = state.arrow;
-			this.movingProgressRemaining = Utils.withGrid(1);
+		// Case: We're a player and have an arrow pressed
+		if(this.isPlayerControlled && state.arrow) {
+			this.startBehavior(state, {
+				type: "walk",
+				direction: state.arrow
+,			});
 		}
     }
+
+	startBehavior(state, behavior) {
+		// Set character direction to whatever behavior was
+		this.direction = behavior.direction;
+
+		if(behavior.type === "walk") {
+			
+			// Stop here if space is not free
+			if(state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+				if(globalDebugEnabled) console.log("This space is not walkable");
+
+				return;
+			}
+			else {
+				if(globalDebugEnabled) console.log("This space is walkable");
+			}
+			
+			this.movingProgressRemaining = Utils.withGrid(1);
+		}
+	}
 
     updatePosition() {
         if (this.movingProgressRemaining > 0) {

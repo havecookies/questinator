@@ -25,6 +25,12 @@ class OverworldMap {
 			Utils.withGrid(6) - cameraPerson.y,
 		)
 	}
+
+	// Can the player move here?
+	isSpaceTaken(currentX, currentY, direction) {
+		const {x,y} = Utils.nextPosition(currentX, currentY, direction);
+		return this.walls[`${x},${y}`] || false;
+	}
 }
 
 window.OverworldMaps = {

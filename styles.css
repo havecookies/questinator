@@ -20,7 +20,7 @@ body {
 	margin: 0 auto;
 	line-height: 0px;
 	padding: 2px;
-	transform: scale(1.42);
+	transform: scale(1.5);
 }
 
 .game-container canvas {

@@ -31,6 +31,32 @@ class OverworldMap {
 		const {x,y} = Utils.nextPosition(currentX, currentY, direction);
 		return this.walls[`${x},${y}`] || false;
 	}
+
+	mountObjects() {
+		Object.keys(this.gameObjects).forEach(key => {
+
+			let object = this.gameObjects[key];
+			object.id = key;
+			
+			//TODO: determine if this object can actually mount
+			object.mount(this);
+
+		});
+	}
+	
+	addWall(x, y) {
+		this.walls[`${x},${y}`] = true;	
+	}
+	
+	removeWall(x, y) {
+		delete this.walls[`${x},${y}`]	
+	}
+	
+	moveWall(wasX, wasY, direction) {
+		this.removeWall(wasX, wasY);
+		const {x,y} = Utils.nextPosition(wasX, wasY, direction);
+		this.addWall(x, y);
+	}
 }
 
 window.OverworldMaps = {
@@ -59,6 +85,8 @@ window.OverworldMaps = {
 			[Utils.asGridCoord(8,6)]: true,
 			[Utils.asGridCoord(7,7)]: true,
 			[Utils.asGridCoord(8,7)]: true,
+			
+			
 		}
   },
   Kitchen: {

@@ -7,7 +7,7 @@ const Utils = {
 	asGridCoord(x,y) {
 		return `${x*globalGridSize},${y*globalGridSize}`
 	},
-
+  
 	nextPosition(initialX, initialY, direction) {
 		let x = initialX;
 		let y = initialY;
@@ -35,5 +35,5 @@ const Utils = {
 		}
 
 		return {x,y};
-	}
+	},
 }

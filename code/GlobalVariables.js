@@ -11,7 +11,7 @@ window.movementSpeed = 1;
 // This is so we can change the player's sprite easily
 window.globalPlayerSprite = "images/temp/characters/people/hero.png";
 
-window.globalDebugEnabled = false;
+window.globalDebugEnabled = true;
 
 // The fps to run the game loop at
 window.fps = 60;

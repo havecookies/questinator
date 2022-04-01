@@ -17,7 +17,7 @@ body {
 	outline: 1px solid #fff;
 	width: translateX(100%);
 	height: translateY(100%);
-	margin: 0 auto;
+	margin: 0;
 	line-height: 0px;
 	padding: 2px;
 	transform: scale(1);

@@ -80,7 +80,27 @@ window.OverworldMaps = {
 			})
 	    },
 		walls: {
-			//"16,16" : true
+			[Utils.asGridCoord(1,3)]: true,
+			[Utils.asGridCoord(2,3)]: true,
+			
+			[Utils.asGridCoord(3,4)]: true,
+			[Utils.asGridCoord(4,4)]: true,
+
+			[Utils.asGridCoord(5,3)]: true,
+			[Utils.asGridCoord(6,4)]: true,
+			
+			[Utils.asGridCoord(6,3)]: true,
+			[Utils.asGridCoord(6,2)]: true,
+			[Utils.asGridCoord(6,1)]: true,
+
+			[Utils.asGridCoord(8,3)]: true,
+			[Utils.asGridCoord(8,2)]: true,
+			[Utils.asGridCoord(8,1)]: true,
+			
+			[Utils.asGridCoord(8,4)]: true,
+			[Utils.asGridCoord(9,3)]: true,
+			[Utils.asGridCoord(10,3)]: true,
+
 			[Utils.asGridCoord(7,6)]: true,
 			[Utils.asGridCoord(8,6)]: true,
 			[Utils.asGridCoord(7,7)]: true,

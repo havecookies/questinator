@@ -11,6 +11,7 @@ class DirectionInput {
 			"KeyA": "left",
 			"ArrowRight": "right",
 			"KeyD": "right",
+			"KeyL": "left",
 		}
 	}
 

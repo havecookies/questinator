@@ -105,8 +105,6 @@ window.OverworldMaps = {
 			[Utils.asGridCoord(8,6)]: true,
 			[Utils.asGridCoord(7,7)]: true,
 			[Utils.asGridCoord(8,7)]: true,
-			
-			
 		}
   },
   Kitchen: {

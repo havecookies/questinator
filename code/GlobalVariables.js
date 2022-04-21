@@ -13,5 +13,14 @@ window.globalPlayerSprite = "images/temp/characters/people/hero.png";
 
 window.globalDebugEnabled = false;
 
-// The fps to run the game loop at
-window.fps = 60;
+// use changeFPS to edit the fps
+/// Frames per millisecond
+window.fpms = 1000 / 60;
+
+function changeFPS(framesPerSecond) {
+    milliseconds = 1000 / framesPerSecond;
+    
+    console.log("Setting fps.\n\n  seconds: " + framesPerSecond + "\n       ms: " + milliseconds);
+    
+    fpms = milliseconds;
+}

@@ -4,8 +4,6 @@ class Overworld {
 		this.canvas = this.element.querySelector(".game-canvas");
 		this.ctx = this.canvas.getContext("2d");
 
-		this.frameRate = 1000 / fps;
-
 		this.map = null;
 	}
 
@@ -36,9 +34,8 @@ class Overworld {
 			
 			this.map.drawUpperImage(this.ctx, cameraPerson);
 			
-			setTimeout(() => {
-				step();
-			}, this.frameRate)
+			// Change steps based on the set framerate, we can lower this if it becomes too laggy
+			setTimeout(step, window.fpms)
 		}
 		step();
 	}

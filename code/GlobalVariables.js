@@ -13,8 +13,7 @@ window.globalPlayerSprite = "images/temp/characters/people/hero.png";
 
 window.globalDebugEnabled = false;
 
-// use changeFPS to edit the fps
-/// Frames per millisecond
+// use changeFPS to edit the fps, the second number is in fps if you need to change it
 window.fpms = 1000 / 60;
 
 function changeFPS(framesPerSecond) {

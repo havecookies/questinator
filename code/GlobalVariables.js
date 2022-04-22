@@ -16,6 +16,9 @@ window.globalDebugEnabled = false;
 // use changeFPS to edit the fps, the second number is in fps if you need to change it
 window.fpms = 1000 / 60;
 
+// Takes input (framesPerSecond), turns it into frames 
+// per millisecond, prints it to console, and then
+// actually changes the frame rate 
 function changeFPS(framesPerSecond) {
     milliseconds = 1000 / framesPerSecond;
     

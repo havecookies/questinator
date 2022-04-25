@@ -19,10 +19,23 @@ window.fpms = 1000 / 60;
 // Takes input (framesPerSecond), turns it into frames 
 // per millisecond, prints it to console, and then
 // actually changes the frame rate 
-function changeFPS(framesPerSecond) {
+function changeFPS(framesPerSecond) {    
     milliseconds = 1000 / framesPerSecond;
     
+    if(framesPerSecond <= 0) {
+        Overworld.isPaused = true;
+
+        framesPerSecond = 0;
+        milliseconds = 0;
+        console.log("Setting fps.\n\n  seconds: " + framesPerSecond + "\n       ms: " + milliseconds);
+
+        return;
+    } else {
+        Overworld.isPaused = false;
+    }
+
     console.log("Setting fps.\n\n  seconds: " + framesPerSecond + "\n       ms: " + milliseconds);
     
+
     fpms = milliseconds;
 }

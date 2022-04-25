@@ -7,8 +7,16 @@ class Overworld {
 		this.map = null;
 	}
 
+	static isPaused = false;
+
 	startGameLoop() {
 		const step = () => {
+			
+			while(Overworld.isPaused) {
+				// Run at 15 frames per second until it is not paused
+				setTimeout(step, 1000 / 15);
+				return;
+			}
 
 			// Clear previous frame
 			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -33,7 +41,8 @@ class Overworld {
 			});
 			
 			this.map.drawUpperImage(this.ctx, cameraPerson);
-			
+
+
 			// Change steps based on the set framerate, we can lower this if it becomes too laggy
 			setTimeout(step, window.fpms)
 		}

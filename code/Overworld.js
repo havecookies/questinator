@@ -17,6 +17,9 @@ class Overworld {
 				setTimeout(step, 1000 / 15);
 				return;
 			}
+			
+			// Get the time before the frame starts (not including pauses)
+			var stepStartTime = Date.now();
 
 			// Clear previous frame
 			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -42,9 +45,14 @@ class Overworld {
 			
 			this.map.drawUpperImage(this.ctx, cameraPerson);
 
+			// Get the time after the frame has been rendered
+			var stepEndTime = Date.now();
 
-			// Change steps based on the set framerate, we can lower this if it becomes too laggy
-			setTimeout(step, window.fpms)
+			// Subtract the difference and multiply by 10 to get milliseconds
+			var stepTimeDifference = (stepEndTime - stepStartTime) * 10;
+
+			// Change steps based on the set framerate minus the time difference this frame caused
+			setTimeout(step, window.fpms - stepTimeDifference)
 		}
 		step();
 	}

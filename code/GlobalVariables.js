@@ -22,6 +22,7 @@ window.fpms = 1000 / 60;
 function changeFPS(framesPerSecond) {    
     milliseconds = 1000 / framesPerSecond;
     
+    // If FPS is 0 or less, tell the game to pause.
     if(framesPerSecond <= 0) {
         Overworld.isPaused = true;
 
@@ -36,6 +37,5 @@ function changeFPS(framesPerSecond) {
 
     console.log("Setting fps.\n\n  seconds: " + framesPerSecond + "\n       ms: " + milliseconds);
     
-
     fpms = milliseconds;
 }

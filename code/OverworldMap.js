@@ -8,6 +8,8 @@ class OverworldMap {
 
 		this.upperImage = new Image();
 		this.upperImage.src = config.upperSrc;
+
+		this.isCutscenePlaying = false;
 	}
 
 	drawLowerImage(ctx, cameraPerson) {
@@ -71,12 +73,32 @@ window.OverworldMaps = {
 				xOffset: 8,
 				yOffset: 18,
 			}),
-			npc1: new Person({
+			npcA: new Person({
 				x: Utils.withGrid(3),
 				y: Utils.withGrid(9),
 				src: "images/temp/characters/people/npc1.png",
 				xOffset: 8,
 				yOffset: 18,
+				behaviorLoop: [
+					{ type: "stand", direction: "left", time: 800},
+					{ type: "stand", direction: "up", time: 800},
+					{ type: "stand", direction: "down", time: 1200},
+					{ type: "stand", direction: "right", time: 300},
+				]
+			}),
+			npcB: new Person({
+				x: Utils.withGrid(5),
+				y: Utils.withGrid(6),
+				src: "images/temp/characters/people/npc2.png",
+				xOffset: 8,
+				yOffset: 18,
+				behaviorLoop: [
+					{ type: "walk", direction: "left"},
+					{ type: "stand", direction: "up", time: 800},
+					{ type: "walk", direction: "up"},
+					{ type: "walk", direction: "right"},
+					{ type: "walk", direction: "down"},
+				],
 			})
 	    },
 		walls: {

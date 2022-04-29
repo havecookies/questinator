@@ -16,6 +16,9 @@ class GameObject {
 			xOffset: config.xOffset || 0,
 			yOffset: config.yOffset || 0,
 		});
+
+		this.behaviorLoop = config.behaviorLoop || [];
+		this.behaviorLoopIndex = 0;
 	}
 
 	mount(map) {
@@ -23,10 +26,41 @@ class GameObject {
 		
 		this.isMounted = true;
 		map.addWall(this.x, this.y);
+
+		// If we have a behavior, kick off after a short delay
+		// Also run at half tick rate
+		setTimeout(() => {
+			this.doBehaviorEvent(map);
+		}, window.fpms / 2)
 	}
 
 	// Update method
 	update() {
 
+	}
+
+	async doBehaviorEvent(map) {
+
+		// Don't do anything if there's a cutscene or this object doesn't do anything
+		if(map.isCutscenePlaying || this.behaviorLoop.length === 0 ) {
+			return;
+		}
+		
+		//Setting up our event with relevant info
+		let eventConfig = this.behaviorLoop[this.behaviorLoopIndex];
+		event.who = this.id;
+
+		// Create an event instance out of our next event config
+		const eventHandler = new OverworldEvent({ map, event: eventConfig});
+		await eventHandler.init();
+
+		// Setting the next event to fire
+		this.behaviorLoopIndex += 1;
+		if(this.behaviorLoopIndex === this.behaviorLoop.Length) {
+			this.behaviorLoopIndex = 0;
+		}
+
+		// Do it again!
+		this.doBehaviorEvent(map);
 	}
 }

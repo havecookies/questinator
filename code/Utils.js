@@ -36,4 +36,10 @@ const Utils = {
 
 		return {x,y};
 	},
+	emitEvent(name, detail) {
+		const event = new CustomEvent("PersonWalkingComplete", {
+				detail
+			});
+		document.dispatchEvent(event);
+	}
 }

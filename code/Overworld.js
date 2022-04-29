@@ -50,9 +50,9 @@ class Overworld {
 
 			// Subtract the difference and multiply by 10 to get milliseconds
 			var stepTimeDifference = (stepEndTime - stepStartTime) * 10;
-
+			
 			// Change steps based on the set framerate minus the time difference this frame caused
-			setTimeout(step, window.fpms - stepTimeDifference)
+			setTimeout(step, window.fpms - (stepTimeDifference * 0.1))
 		}
 		step();
 	}

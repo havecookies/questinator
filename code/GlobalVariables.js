@@ -16,6 +16,9 @@ window.globalDebugEnabled = false;
 // use changeFPS to edit the fps, the second number is in fps if you need to change it
 window.fpms = 1000 / 60;
 
+// Don't edit this :)
+window.isPaused = false;
+
 // Takes input (framesPerSecond), turns it into frames 
 // per millisecond, prints it to console, and then
 // actually changes the frame rate 
@@ -24,17 +27,17 @@ function changeFPS(framesPerSecond) {
     
     // If FPS is 0 or less, tell the game to pause.
     if(framesPerSecond <= 0) {
-        Overworld.isPaused = true;
+        window.isPaused = true;
 
         framesPerSecond = 0;
         milliseconds = 0;
         console.log("Setting fps.\n\n  seconds: " + framesPerSecond + "\n       ms: " + milliseconds);
 
         return;
-    } else {
-        Overworld.isPaused = false;
     }
 
+    window.isPaused = false;
+    
     console.log("Setting fps.\n\n  seconds: " + framesPerSecond + "\n       ms: " + milliseconds);
     
     fpms = milliseconds;

@@ -12,10 +12,10 @@ class Overworld {
 	startGameLoop() {
 		const step = () => {
 			
-			while(Overworld.isPaused) {
-				// Run at 15 frames per second until it is not paused
-				setTimeout(step, 1000 / 15);
-				return;
+			// If we want to pause this frame, set isCutscenePlaying
+			// to true
+			if(window.isPaused) {
+				this.map.isCutscenePlaying = true;
 			}
 			
 			// Get the time before the frame starts (not including pauses)
@@ -38,8 +38,10 @@ class Overworld {
 			// Draw lower map layer
 			this.map.drawLowerImage(this.ctx, cameraPerson);
 			
-			// Draw Game Objects
-			Object.values(this.map.gameObjects).forEach(object => {
+			// Draw game objects and sort based on y value
+			Object.values(this.map.gameObjects).sort((a,b) => {
+				return a.y - b.y;
+			}).forEach(object => {
 				object.sprite.draw(this.ctx, cameraPerson);
 			});
 			
@@ -49,10 +51,10 @@ class Overworld {
 			var stepEndTime = Date.now();
 
 			// Subtract the difference and multiply by 10 to get milliseconds
-			var stepTimeDifference = (stepEndTime - stepStartTime) * 10;
+			var stepTimeDifference = (stepEndTime - stepStartTime) * 0.1;
 			
 			// Change steps based on the set framerate minus the time difference this frame caused
-			setTimeout(step, window.fpms - (stepTimeDifference * 0.1))
+			setTimeout(step, window.fpms - stepTimeDifference)
 		}
 		step();
 	}

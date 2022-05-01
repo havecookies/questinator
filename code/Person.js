@@ -23,7 +23,7 @@ class Person extends GameObject {
 			// More cases for starting to walk if needed
 	
 			// Case: We're a player and have an arrow pressed
-			if(this.isPlayerControlled && state.arrow) {
+			if(!state.map.isCutscenePlaying && this.isPlayerControlled && state.arrow) {
 				this.startBehavior(state, {
 					type: "walk",
 					direction: state.arrow
@@ -46,6 +46,11 @@ class Person extends GameObject {
 			if(state.map.isSpaceTaken(this.x, this.y, this.direction)) {
 				if(globalDebugEnabled) console.log("This space is not walkable");
 				
+				// If has retry enabled, retry the walk
+				behavior.retry && setTimeout(() => {
+					this.startBehavior(state, behavior)
+				}, window.fpms)
+
 				return;
 			}
 			else {
@@ -55,11 +60,20 @@ class Person extends GameObject {
 			// Ready to move
 			state.map.moveWall(this.x, this.y, this.direction);
 			this.movingProgressRemaining = Utils.withGrid(1);
+			this.updateSprite();
+		}
+
+		if (behavior.type === "stand") {
+			setTimeout(() => {
+				Utils.emitEvent("PersonStandComplete", {
+					whoId: this.id
+				});
+			}, behavior.time)
 		}
 	}
 
     updatePosition() {
-        const [property, change] = this.directionUpdate[this.direction]
+        const [property, change] = this.directionUpdate[this.direction];
         this[property] += change * movementSpeed;
         this.movingProgressRemaining -= 1 * movementSpeed;
 
@@ -67,7 +81,7 @@ class Person extends GameObject {
 			// We finished the walk
 			Utils.emitEvent("PersonWalkingComplete", {
 				whoId: this.id
-			})
+			});
 		}
 	}
 	

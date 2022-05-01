@@ -9,7 +9,7 @@ class OverworldMap {
 		this.upperImage = new Image();
 		this.upperImage.src = config.upperSrc;
 
-		this.isCutscenePlaying = false;
+		this.isCutscenePlaying = true;
 	}
 
 	drawLowerImage(ctx, cameraPerson) {
@@ -45,6 +45,21 @@ class OverworldMap {
 
 		});
 	}
+
+	async startCutscene(events) {
+		this.isCutscenePlaying = true;
+
+		for (let i = 0; i < events.length; i++) {
+			const eventHandler = new OverworldEvent({
+				event: events[i],
+				map: this,
+			})
+			await eventHandler.init();
+		}
+		
+		// Before we finish let's remember to stop the cutscene
+		this.isCutscenePlaying = false;
+	}
 	
 	addWall(x, y) {
 		this.walls[`${x},${y}`] = true;	
@@ -63,7 +78,7 @@ class OverworldMap {
 
 window.OverworldMaps = {
 	DemoRoom: {
-	    lowerSrc: "images/temp/maps/DemoLower.png",
+		lowerSrc: "images/temp/maps/DemoLower.png",
 	    upperSrc: "images/temp/maps/DemoUpper.png",
 	    gameObjects: {
 			player: new Person({
@@ -99,7 +114,7 @@ window.OverworldMaps = {
 					{ type: "walk", direction: "right"},
 					{ type: "walk", direction: "down"},
 				],
-			})
+			}),
 	    },
 		walls: {
 			[Utils.asGridCoord(1,3)]: true,
@@ -107,14 +122,14 @@ window.OverworldMaps = {
 			
 			[Utils.asGridCoord(3,4)]: true,
 			[Utils.asGridCoord(4,4)]: true,
-
+			
 			[Utils.asGridCoord(5,3)]: true,
 			[Utils.asGridCoord(6,4)]: true,
 			
 			[Utils.asGridCoord(6,3)]: true,
 			[Utils.asGridCoord(6,2)]: true,
 			[Utils.asGridCoord(6,1)]: true,
-
+			
 			[Utils.asGridCoord(8,3)]: true,
 			[Utils.asGridCoord(8,2)]: true,
 			[Utils.asGridCoord(8,1)]: true,

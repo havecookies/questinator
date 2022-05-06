@@ -14,6 +14,15 @@ Questinator is a game made by people who understand what
 people find fun, and what people don't. This is because 
 we play video games ourselves. When we used these 
 programs for learning, we realized that they weren't that 
-fun - certainly not something we'd want to play on a 
-daily basis. And so, we decided to create our own 
-learning program, where we make it actually fun.
+fun - not something we would want to play outside of a
+learning environment. And so, we decided to create the
+questinator, an actually fun learning game for kids.
+
+# When will this be done, and how often is it updated?
+Questinator is currently a very small team of passionate
+students, and so it will likely not be done for a long
+while. But, we do want to finish this project, and so we
+will often be working on it. We cannot guarantee the 
+consistency of updates, how big the updates will be, or
+when we will be done, but we will still certainly release
+updates as often as needed.

@@ -17,6 +17,9 @@ class Overworld {
 			if(window.isPaused) {
 				this.map.isCutscenePlaying = true;
 			}
+			else {
+				this.map.isCutscenePlaying = false;
+			}
 			
 			// Get the time before the frame starts (not including pauses)
 			var stepStartTime = Date.now();
@@ -60,7 +63,7 @@ class Overworld {
 	}
 	
 	init() {
-		this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
+		this.map = new OverworldMap(window.OverworldMaps.BWDMap);
 		
 		if (globalDebugEnabled) console.log("This map's wall positions: " + this.map.walls);
 		this.map.mountObjects();
@@ -69,97 +72,5 @@ class Overworld {
 		this.directionInput.init();
 		
 		this.startGameLoop();
-
-		this.map.startCutscene([
-			{ who: "player", type: "walk", direction: "left"},
-			{ who: "player", type: "walk", direction: "down"},
-			{ who: "player", type: "walk", direction: "down"},
-			{ who: "player", type: "walk", direction: "down"},
-			{ who: "player", type: "stand", direction: "right", time: 100 },
-			
-			{ who: "npcB", type: "walk", direction: "down"},
-			{ who: "npcB", type: "walk", direction: "down"},
-			{ who: "npcB", type: "walk", direction: "down"},
-			{ who: "npcB", type: "walk", direction: "left"},
-
-			{ who: "npcA", type: "stand", direction: "left", time: 500 },
-			{ who: "npcA", type: "stand", direction: "right", time: 500 },
-			{ who: "npcA", type: "stand", direction: "left", time: 400 },
-			{ who: "npcA", type: "stand", direction: "right", time: 400 },
-			{ who: "npcA", type: "stand", direction: "left", time: 200 },
-			{ who: "npcA", type: "stand", direction: "right", time: 200 },
-			{ who: "npcA", type: "stand", direction: "left", time: 100 },
-			{ who: "npcA", type: "stand", direction: "right", time: 50 },
-			{ who: "npcA", type: "stand", direction: "left", time: 25 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			{ who: "npcA", type: "stand", direction: "right", time: 20 },
-			{ who: "npcA", type: "stand", direction: "left", time: 20 },
-			
-			{ who: "npcA", type: "walk", direction: "up"},
-			{ who: "npcA", type: "walk", direction: "up"},
-			{ who: "npcA", type: "walk", direction: "up"},
-			{ who: "npcA", type: "walk", direction: "up"},
-			{ who: "npcA", type: "walk", direction: "right"},
-			{ who: "npcA", type: "walk", direction: "right"},
-			{ who: "npcA", type: "walk", direction: "right"},
-			{ who: "npcA", type: "walk", direction: "right"},
-			{ who: "npcA", type: "walk", direction: "up"},
-			{ who: "npcA", type: "stand", direction: "down", time: 1000 },
-			{ who: "npcA", type: "walk", direction: "up"},
-			{ who: "npcA", type: "walk", direction: "up"},
-		]);
 	}
 }

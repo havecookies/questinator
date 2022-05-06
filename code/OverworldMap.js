@@ -149,6 +149,7 @@ window.OverworldMaps = {
     upperSrc: "images/temp/maps/KitchenUpper.png",
     gameObjects: {
     	player: new Person({
+			isPlayerControlled: true,
         	x: Utils.withGrid(3),
         	y: Utils.withGrid(5),
     	}),
@@ -163,5 +164,136 @@ window.OverworldMaps = {
     		src: "images/temp/characters/people/npc3.png"
     	})
     }
+  },
+  BWDMap: {
+	lowerSrc: "images/temp-demo/custommaps/demomaplower.png",
+	upperSrc: "images/temp-demo/custommaps/demomapupper.png",
+	gameObjects: {
+		player: new Person({
+			isPlayerControlled: true,
+			x: Utils.withGrid(2),
+			y: Utils.withGrid(5),
+			xOffset: 8,
+			yOffset: 18,
+		}),
+		npcA: new Person({
+			x: Utils.withGrid(14),
+			y: Utils.withGrid(13),
+			src: "images/temp/characters/people/npc1.png",
+			xOffset: 8,
+			yOffset: 18,
+			behaviorLoop: [
+				{ type: "stand", direction: "left", time: 9000},
+				{ type: "stand", direction: "up", time: 700},
+			]
+		}),
+		npcB: new Person({
+			x: Utils.withGrid(11),
+			y: Utils.withGrid(13),
+			src: "images/temp/characters/people/npc2.png",
+			xOffset: 8,
+			yOffset: 18,
+			behaviorLoop: [
+				{ type: "stand", direction: "right", time: 10000},
+				{ type: "stand", direction: "up", time: 800},
+			],
+		}),
+	},
+	walls: {
+		[Utils.asGridCoord(1,1)]: true,
+		[Utils.asGridCoord(2,1)]: true,
+		[Utils.asGridCoord(3,1)]: true,
+		[Utils.asGridCoord(4,1)]: true,
+		[Utils.asGridCoord(5,1)]: true,
+		[Utils.asGridCoord(6,1)]: true,
+		[Utils.asGridCoord(7,1)]: true,
+		[Utils.asGridCoord(8,1)]: true,
+		[Utils.asGridCoord(9,1)]: true,
+		[Utils.asGridCoord(10,1)]: true,
+		[Utils.asGridCoord(11,1)]: true,
+		[Utils.asGridCoord(12,1)]: true,
+		[Utils.asGridCoord(13,1)]: true,
+		[Utils.asGridCoord(14,1)]: true,
+
+		[Utils.asGridCoord(0,2)]: true,
+		[Utils.asGridCoord(0,3)]: true,
+		[Utils.asGridCoord(0,4)]: true,
+		[Utils.asGridCoord(0,5)]: true,
+		[Utils.asGridCoord(0,6)]: true,
+		[Utils.asGridCoord(0,7)]: true,
+		[Utils.asGridCoord(0,8)]: true,
+		[Utils.asGridCoord(0,9)]: true,
+		[Utils.asGridCoord(0,10)]: true,
+		[Utils.asGridCoord(0,11)]: true,
+		[Utils.asGridCoord(0,12)]: true,
+		[Utils.asGridCoord(0,13)]: true,
+		[Utils.asGridCoord(0,14)]: true,
+		
+		[Utils.asGridCoord(1,15)]: true,
+		[Utils.asGridCoord(2,15)]: true,
+		[Utils.asGridCoord(3,15)]: true,
+		[Utils.asGridCoord(4,15)]: true,
+		[Utils.asGridCoord(5,15)]: true,
+		[Utils.asGridCoord(6,15)]: true,
+		[Utils.asGridCoord(7,15)]: true,
+		[Utils.asGridCoord(8,15)]: true,
+
+		[Utils.asGridCoord(9,14)]: true,
+		[Utils.asGridCoord(9,13)]: true,
+		[Utils.asGridCoord(9,12)]: true,
+		[Utils.asGridCoord(9,11)]: true,
+		
+		[Utils.asGridCoord(10,14)]: true,
+		[Utils.asGridCoord(10,13)]: true,
+		[Utils.asGridCoord(10,12)]: true,
+		[Utils.asGridCoord(10,11)]: true,
+		
+		[Utils.asGridCoord(11,15)]: true,
+		[Utils.asGridCoord(12,15)]: true,
+		[Utils.asGridCoord(13,15)]: true,
+		[Utils.asGridCoord(14,15)]: true,
+		
+		[Utils.asGridCoord(15,14)]: true,
+		[Utils.asGridCoord(15,13)]: true,
+		[Utils.asGridCoord(15,12)]: true,
+		[Utils.asGridCoord(15,11)]: true,
+		[Utils.asGridCoord(15,10)]: true,
+		[Utils.asGridCoord(15,9)]: true,
+		
+		[Utils.asGridCoord(14,8)]: true,
+		[Utils.asGridCoord(13,8)]: true,
+		[Utils.asGridCoord(12,8)]: true,
+		[Utils.asGridCoord(11,8)]: true,
+		[Utils.asGridCoord(10,8)]: true,
+		[Utils.asGridCoord(9,8)]: true,
+		[Utils.asGridCoord(8,8)]: true,
+		[Utils.asGridCoord(7,8)]: true,
+		[Utils.asGridCoord(6,8)]: true,
+		[Utils.asGridCoord(5,8)]: true,
+		[Utils.asGridCoord(4,8)]: true,
+		
+		[Utils.asGridCoord(4,7)]: true,
+		[Utils.asGridCoord(4,6)]: true,
+
+		[Utils.asGridCoord(5,6)]: true,
+		[Utils.asGridCoord(6,6)]: true,
+		[Utils.asGridCoord(7,6)]: true,
+		[Utils.asGridCoord(8,6)]: true,
+		[Utils.asGridCoord(9,6)]: true,
+		[Utils.asGridCoord(10,6)]: true,
+		[Utils.asGridCoord(11,6)]: true,
+		[Utils.asGridCoord(12,6)]: true,
+		[Utils.asGridCoord(13,6)]: true,
+		[Utils.asGridCoord(14,6)]: true,
+
+		[Utils.asGridCoord(15,5)]: true,
+		[Utils.asGridCoord(15,4)]: true,
+		[Utils.asGridCoord(15,3)]: true,
+		[Utils.asGridCoord(15,2)]: true,
+
+		[Utils.asGridCoord(2,13)]: true,
+		[Utils.asGridCoord(13,13)]: true,
+		[Utils.asGridCoord(12,13)]: true,
+	}
   }
 }

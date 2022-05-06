@@ -9,7 +9,7 @@ window.globalGridSize = 16;
 window.movementSpeed = 1;
 
 // This is so we can change the player's sprite easily
-window.globalPlayerSprite = "images/temp/characters/people/hero.png";
+window.globalPlayerSprite = "images/temp/characters/people/npc3.png";
 
 window.globalDebugEnabled = false;
 
